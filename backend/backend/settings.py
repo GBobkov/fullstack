@@ -16,8 +16,8 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-hgn^6chms*lma)99%n&kx-6o-tmd1=x+ei3n&fm1tnd^)@lg3^'
-
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
+SECRET_KEY = os.getenv("SECRET_KEY", "123")
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
@@ -84,6 +84,7 @@ SIMPLE_JWT = {
 
 AUTH_USER_MODEL = "api.User"
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -105,10 +106,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL", "sqlite:///db.sqlite3")
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
