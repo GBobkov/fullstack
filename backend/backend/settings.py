@@ -21,7 +21,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 SECRET_KEY = os.getenv("SECRET_KEY", "123")
 ALLOWED_HOSTS = ["*"]
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+CORS_ALLOWED_ORIGINS = ["https://slowed-reverb-frontend.onrender.com"]
 CORS_ALLOW_CREDENTIALS = True
 
 SESSION_COOKIE_SAMESITE = "None"
@@ -30,7 +30,7 @@ SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SAMESITE = "None"
 CSRF_COOKIE_SECURE = False
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ["https://slowed-reverb-frontend.onrender.com"]
 
 
 
