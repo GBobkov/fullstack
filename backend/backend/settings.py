@@ -25,10 +25,10 @@ CORS_ALLOWED_ORIGINS = ["https://slowed-reverb-frontend.onrender.com"]
 CORS_ALLOW_CREDENTIALS = True
 
 SESSION_COOKIE_SAMESITE = "None"
-SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SAMESITE = "None"
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 
 CSRF_TRUSTED_ORIGINS = ["https://slowed-reverb-frontend.onrender.com"]
 
@@ -80,7 +80,7 @@ SIMPLE_JWT = {
     "AUTH_COOKIE": "access_token",
     "AUTH_COOKIE_HTTP_ONLY": True,
     "AUTH_COOKIE_SAMESITE": "None",
-    "AUTH_COOKIE_SECURE": False,
+    "AUTH_COOKIE_SECURE": True,
 }
 
 AUTH_USER_MODEL = "api.User"
