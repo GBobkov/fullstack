@@ -37,7 +37,7 @@ class RegisterAPIView(generics.CreateAPIView):
             value=refresh_token,
             httponly=True,
             samesite="None",
-            secure=False,
+            secure=True,
             max_age=7*24*3600,
             path="/api/",
         )
@@ -76,7 +76,7 @@ class LoginAPIView(APIView):
             key="refresh_token",
             value=str(refresh),
             httponly=True,
-            secure=False,
+            secure=True,
             samesite="None",
             max_age=7 * 24 * 3600,
             path="/",
